@@ -428,9 +428,17 @@
                                                 <form action="myReport.html" method="GET" target="_blank">
                                                 <input type="hidden" name="code" value="${usedPlanInfo.prepaidCode}"/>
                                                 <input type="Submit" class="btn blue" value="Print"/>
-                                                </form>
+                                                
+                                                
+                                                <input type="button" class="btn blue" onclick="sendSms()" value="Send Sms"/>
+                                                   </form>  
+                                                   <input type="hidden" id="code" name="code" value="${usedPlanInfo.prepaidCode}"/>
+                                            </div>
+                                             <div id="smsstatus" class="form-actions">
+                                                
                                                      
                                             </div> 
+                                            
                                             
                                            
                                            
@@ -530,7 +538,25 @@
                 });
         }
         
-        
+        function sendSms(){
+        	//alert("Selected");
+        	
+        	var code =$("#code").val();
+        	$.ajax({
+                url:'smssend.html',
+                type:'GET',
+                
+                data:{"code":code},
+                success:function(data){
+                   //alert(data);
+                 
+                   $("#smsstatus").html("<font color='green'> "+data+"</font>");
+                 
+               
+                        
+                }
+                });
+        	}
         
         
         

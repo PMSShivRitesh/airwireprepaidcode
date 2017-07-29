@@ -21,7 +21,40 @@ public class HotelInfo {
 	@Column(name="HOTELNAME")
 	private String hotleName;
 	
+	@Column(name="SENDERID")
+	private String senderId;
 	
+	@Column(name="USERID")
+	private String userId;
+	
+	@Column(name="PASSWORD")
+	private String password;
+	
+	
+
+	public String getSenderId() {
+		return senderId;
+	}
+
+	public void setSenderId(String senderId) {
+		this.senderId = senderId;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public Integer getId() {
 		return id;
