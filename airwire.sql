@@ -21,14 +21,17 @@ DROP TABLE IF EXISTS `hotelinfo`;
 CREATE TABLE IF NOT EXISTS `hotelinfo` (
   `S_ID` int(11) NOT NULL AUTO_INCREMENT,
   `HOTELNAME` varchar(255) DEFAULT NULL,
+  `PASSWORD` varchar(255) DEFAULT NULL,
+  `SENDERID` varchar(255) DEFAULT NULL,
+  `USERID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`S_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table airwire.hotelinfo: ~1 rows (approximately)
 DELETE FROM `hotelinfo`;
 /*!40000 ALTER TABLE `hotelinfo` DISABLE KEYS */;
-INSERT INTO `hotelinfo` (`S_ID`, `HOTELNAME`) VALUES
-	(1, 'Hotel Sagar Plaza');
+INSERT INTO `hotelinfo` (`S_ID`, `HOTELNAME`, `PASSWORD`, `SENDERID`, `USERID`) VALUES
+	(1, 'Hotel Sagar Plaza', '1112131112131', '1A1W1S1LTN1', '1A1W1S1L1T1N1');
 /*!40000 ALTER TABLE `hotelinfo` ENABLE KEYS */;
 
 
@@ -87,26 +90,21 @@ CREATE TABLE IF NOT EXISTS `usedplaninfo` (
   `DATE` datetime DEFAULT NULL,
   `EMAILID` varchar(255) DEFAULT NULL,
   `GUESTNAME` varchar(255) DEFAULT NULL,
+  `hotelName` varchar(255) DEFAULT NULL,
   `MOBILENO` varchar(255) DEFAULT NULL,
   `PHOTOIDPROOF` varchar(255) DEFAULT NULL,
   `PHOTOIDPROOFTYPE` varchar(255) DEFAULT NULL,
   `PLAN` varchar(255) DEFAULT NULL,
   `PREPAIDCODE` varchar(255) DEFAULT NULL,
   `ROOMNO` varchar(255) DEFAULT NULL,
-  `hotelName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`U_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table airwire.usedplaninfo: ~6 rows (approximately)
+-- Dumping data for table airwire.usedplaninfo: ~1 rows (approximately)
 DELETE FROM `usedplaninfo`;
 /*!40000 ALTER TABLE `usedplaninfo` DISABLE KEYS */;
-INSERT INTO `usedplaninfo` (`U_Id`, `ADDRESS`, `AMOUNT`, `ByUser`, `DATE`, `EMAILID`, `GUESTNAME`, `MOBILENO`, `PHOTOIDPROOF`, `PHOTOIDPROOFTYPE`, `PLAN`, `PREPAIDCODE`, `ROOMNO`, `hotelName`) VALUES
-	(1, '', 0, 'admin', '2017-02-25 00:00:00', '', 'Bhagwat ', '', '22555', 'ELECTION CARD', '1', '13518940', '101', NULL),
-	(2, '', 0, 'admin', '2017-02-25 00:00:00', '', '', '', 'fsv', 'ELECTION CARD', '1', '13518940', 'f', NULL),
-	(3, '', 0, 'admin', '2017-02-25 00:00:00', '', 'Arun Renguntwar', '', 'safsaf', 'ELECTION CARD', '1', '13518940', '101', NULL),
-	(4, '', 0, 'admin', '2017-02-25 00:00:00', '', '', '', 'df', 'AADHAR CARD', '1', '13518940', 'sad', NULL),
-	(5, '', 0, 'admin', '2017-02-25 00:00:00', '', '', '', '32423', 'ELECTION CARD', '1', '13518940', '10', NULL),
-	(6, '', 0, 'admin', '2017-02-25 00:00:00', '', 'Bhagwat', '', '1223', 'AADHAR CARD', '1', '13518940', '101', NULL);
+INSERT INTO `usedplaninfo` (`U_Id`, `ADDRESS`, `AMOUNT`, `ByUser`, `DATE`, `EMAILID`, `GUESTNAME`, `hotelName`, `MOBILENO`, `PHOTOIDPROOF`, `PHOTOIDPROOFTYPE`, `PLAN`, `PREPAIDCODE`, `ROOMNO`) VALUES
+	(1, '', 0, 'admin', '2017-07-30 00:00:00', '', 'sadfd', NULL, '9146999123', 'sfdsf', 'ELECTION CARD', '1', '13518940', 'sadfsd');
 /*!40000 ALTER TABLE `usedplaninfo` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
